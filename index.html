@@ -89,14 +89,14 @@ h1{
 .product {
     background: white;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 30px;
     text-align: center;
 }
 
 .product img {
     width: 100%;
     height: 150px;
-    object-fit: contain;
+    object-fit: contain
 }
 
 .product h4 {
@@ -107,8 +107,40 @@ h1{
     color: red;
     font-weight: bold;
 }
+.dropdown-test{
+  position: relative;
+  display: inline-block;
+}
 
+.dropbtn {
+  background:none;
+  background-color: red;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight:bold;
+  font-size:16px;
+}
 
+.dropdown-content {
+  display: none;
+  position:absolute;
+  background:white;
+  min-width: 400px;
+  
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: black;
+ 
+}
+
+.dropdown-test:focus-within .dropdown-content {
+  display: block;
+}
 </style>
 </head>
 
@@ -118,11 +150,33 @@ h1{
 
 
 <div class="nav">
-    <a href="c:\Users\SUBHASHINI ISKA\Desktop\google classroom\ex.html" target="blank">All catagories</a>
-    <a href="c:\Users\SUBHASHINI ISKA\Desktop\google classroom\ex.html" target="blank" >products</a>
-    <a href="c:\Users\SUBHASHINI ISKA\Desktop\google classroom\ex.html" target="blank">contact</a>
-    <a href="c:\Users\SUBHASHINI ISKA\Desktop\google classroom\ex.html" target="blank">best seller</a>
-    <a href="c:\Users\SUBHASHINI ISKA\Desktop\google classroom\ex.html" target="blank">new arrival</a>
+    <div class="dropdown-test">
+        <button class="dropbtn" >All categories ▼</button>
+        <div class="dropdown-content">
+            <a>📱 Mobiles & Accessories</a>
+            <a>💻 Computers & Laptops</a>
+            <a>📺 TV and Home Entertainment</a>
+            <a>🏠 Home Appliances</a>
+            <a>🥘 Kitchen Appliances</a>
+            <a>📷 Cameras & Accessories</a>   
+            <a>⌚ Wearbles & watches</a>       
+            <a>🎮 Gaming & Accessories</a>
+            <a>🔧 Networking & Office Electronics</a>
+        </div>
+    </div>
+    <a href="c:\Users\SUBHASHINI ISKA\Desktop\project\x.html" target="blank" >products</a>
+      <div class="dropdown-test">
+        <button class="dropbtn" >Contacts</button>
+        <div class="dropdown-content">
+            <a> 📞 phone : +91 8639039128</a>
+            <a> ✉ email : support@electronicstore.com</a>
+            <a> 📰 Address : Bheeram Guda,Hyderabad,Telangana</a>
+            <a> ⏱ Working hours : Mon-Sat 9AM-9PM</a>
+        </div>
+      </div>
+      <a href="c:\Users\SUBHASHINI ISKA\Desktop\project\ex.html" target="blank">best seller</a>
+      
+
         
 </div>
 
@@ -131,10 +185,10 @@ h1{
     <div class="main-text">
         <h1>Your One-Stop Electronic Market</h1>
         <p>Buy the best electronic products with amazing offers.</p>
-        <button>Shop Now</button>
+        <button >Shop Now </button>
     </div>
     <div class="main-img">
-        <img src="c:\Users\SUBHASHINI ISKA\Desktop\google classroom\smare.jpeg" alt="electronics">
+        <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\smart.jpg" alt="electronics">
     </div>
 </div>
 
@@ -144,38 +198,43 @@ h1{
     <div class="product-grid">
 
         <div class="product">
-            <img src="c:\Users\SUBHASHINI ISKA\Desktop\google classroom\iphone.jpeg">
+            <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\iphone.jpeg" alt="hello">
             <h4>iPhone 17</h4>
             <div class="price">$999</div>
+            <button >add to cart</button>
+            
+            
         </div>
 
         <div class="product">
-            <img src="c:\Users\SUBHASHINI ISKA\Desktop\google classroom\headphones.jpeg">
+            <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\headphones.jpeg">
             <h4>Headphones</h4>
             <div class="price">$59</div>
+            <button >add to cart</button>
         </div>
 
         <div class="product">
-            <img src="c:\Users\SUBHASHINI ISKA\Desktop\google classroom\buds.jpeg">
+            <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\buds.jpeg">
             <h4>buds</h4>
             <div class="price">$99</div>
+            <button >add to cart</button>
         </div>
 
         <div class="product">
-            <img src="c:\Users\SUBHASHINI ISKA\Desktop\google classroom\camera.jpeg">
-            <h4></h4> Camera</h4>
+            <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\camera.jpeg">
+            <h4></h4>Camera</h4>
             <div class="price">$79</div>
+            <button >add to cart</button>
         </div>
 
         <div class="product">
-            <img src="c:\Users\SUBHASHINI ISKA\Desktop\google classroom\tv.jpeg">
+            <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\tv.jpeg">
             <h4>TV</h4>
             <div class="price">$279</div>
+            <button >add to cart</button>
         </div>
 
     </div>
-    <video >
-     src="C:\Users\SUBHASHINI ISKA\Desktop\google classroom\video.mp4" </video>"
     
 </div>
 </body>
