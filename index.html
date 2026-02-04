@@ -6,7 +6,7 @@
 <style>
 body {
     font-family:arial;
-    background-color:antiquewhite
+    background-color:antiquewhite;
 }
 
 
@@ -17,9 +17,12 @@ h1{
     font-family:Arial, Helvetica, sans-serif;
 }
 
-.nav {
+.nav{
     background:red;
     padding: 12px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .nav a {
@@ -141,6 +144,27 @@ h1{
 .dropdown-test:focus-within .dropdown-content {
   display: block;
 }
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:90px;
+}
+.search-box{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+footer{
+    background-color:lightsalmon;
+    text-align: center;
+}
+.about{
+    font-size: x-large;
+    color: black;
+}
+.follow:hover{
+    color: brown;
+}
 </style>
 </head>
 
@@ -150,6 +174,7 @@ h1{
 
 
 <div class="nav">
+    <div class="dropdown">
     <div class="dropdown-test">
         <button class="dropbtn" >All categories ▼</button>
         <div class="dropdown-content">
@@ -164,6 +189,7 @@ h1{
             <a>🔧 Networking & Office Electronics</a>
         </div>
     </div>
+    </div>
     <a href="c:\Users\SUBHASHINI ISKA\Desktop\project\x.html" target="blank" >products</a>
       <div class="dropdown-test">
         <button class="dropbtn" >Contacts</button>
@@ -175,8 +201,14 @@ h1{
         </div>
       </div>
       <a href="c:\Users\SUBHASHINI ISKA\Desktop\project\ex.html" target="blank">best seller</a>
-      
-
+      <div class="nav-right">
+      <div class="search-box">
+      <label>🔎</label>
+      <input type="text" placeholder="search here..">
+      </div>
+      <a href="c:\Users\SUBHASHINI ISKA\Desktop\project\login.html" target="blank">login</a>
+      </div>
+    
         
 </div>
 
@@ -188,7 +220,9 @@ h1{
         <button >Shop Now </button>
     </div>
     <div class="main-img">
-        <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\smart.jpg" alt="electronics">
+        <a href="c:\Users\SUBHASHINI ISKA\Desktop\project\video.mp4" >
+        <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\smart.jpg" alt="electronics"></a>
+        
     </div>
 </div>
 
@@ -237,6 +271,16 @@ h1{
     </div>
     
 </div>
+<footer>
+    <div class="About">
+        <p>Your one-stop online shop for the latest electronics — headphones,speakers,laptops, and more!</p>
+    </div>
+    <div class="follow">
+        <a href="#">facebook</a>
+        <a href="#">instagram</a>
+        <a href="#">twitter</a>
+    </div>
+    <p>2026 YourStore.All Rights Reserved.</p>
+</footer>
 </body>
-
 </html>
