@@ -1,0 +1,73 @@
+import re
+1.
+pattern = r'(\d\d\d)-(\d\d\d-\d\d\d\d)'
+check=re.search(pattern,"863-903-9128")
+print(check.group(0))
+print(check.group(1))
+print(check.group(2))
+
+2.
+pattern=r'https?://'
+url="https://instagram.com"
+check=re.match(pattern,url)
+if check:
+   print(url)
+else:
+   print("none")
+
+3.
+def replace(dates):
+    dates=re.sub(r'(\d{4})/(\d{1,2})/(\d{1,2})',r'\2-\3-\1',dates)
+    dates=re.sub(r'(\d{1,2})/(\d{4})/(\d{1,2})',r'\3-\1-\2',dates)
+    return dates
+dates=" 2005/17/05, 05/2025/18" 
+print(replace(dates))
+
+4.
+pattern=r'\d{1,3}(,\d{3})*$'
+numbers=["42","1,234","6,368,567","12,34,567","1234"]
+for num in numbers:
+    if re.match(pattern,num):
+        print(num,":valid")
+    else:
+        print(num,":invalid")
+
+5.
+pattern=r'^[A-Z][a-z A-Z]+ Nakamoto$'
+names=["Satoshi Nakamoto","Alice Nakamoto","RoboCopNakamoto","Mr.  Nakamoto","Nakamoto","Sathoshi nakamoto"]
+for name in names:
+    if re.match(pattern,name):
+        print(name,":valid")
+    else:
+        print(name,":invalid")
+
+6.
+pattern=r'^(alice|bob|carol)(eats|pets|throws)(apples|cats|baseball)\.$'
+sentences=[
+    "Alice eats apples",
+    "bob pets cats",
+    "alice throws baseballs",
+    "BOB EATS CATS",
+    "Robocop pets,apples",
+    "Alice throws football",
+    "carol eats 7 cats"
+]
+for s in sentences:
+    print(s,"->",bool(re.match(pattern,s,re_tf:=re.IGNORECASE)))
+
+7.
+def isstrongpassword(password):
+    if len(password) < 8:
+        return False
+    if not re.search(r'[A-Z]', password):
+        return False
+    if not re.search(r'[a-z]', password):
+        return False
+    if not re.search(r'\d', password):
+        return False
+    return True
+
+passwords = ["Hello123", "weakpass", "STRONG123", "StrongPass1"]
+
+for p in passwords:
+    print(p, isstrongpassword(p))
