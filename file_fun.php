@@ -35,3 +35,4 @@ echo "<br>Files in directory:<br>";
 print_r(scandir("."));
 unlink("comb12.txt");
 rmdir("testfolder");
+?>
