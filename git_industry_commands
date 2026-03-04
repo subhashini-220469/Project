@@ -1,0 +1,26 @@
+
+
+## 1.1 git config --global user.name
+syntax:git config --global user.name "Your Name"
+purpose:Sets or displays the global username used for Git commits.
+Example:git config --global user.name "subbu"
+screenshot:![Git Username](git-config.png)
+
+## 1.2 git config --global user.email
+syntax:git config --global user.email "Your email"
+purpose:Sets or displays the global email used for Git commits.
+Example:git config --global user.email "n220469@rguktn.ac.in"
+screenshot:![Git email](git-config.png)
+
+## 1.3 git config --list
+syntax:git config --list
+purpose:Displays all Git configuration settings
+Example:git config --list
+screenshot:![Git Config list Output](git-list.png)
+
+## 1.4 git config --global --unset user.name
+syntax:git config --global --unset user.name
+purpose:Removes a specific Git configuration setting.
+Example:git config --global --unset user.name
+screenshot:![Git unset output](git-unset.png)
+
