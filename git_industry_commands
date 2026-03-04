@@ -24,3 +24,14 @@ purpose:Removes a specific Git configuration setting.
 Example:git config --global --unset user.name
 screenshot:![Git unset output](git-unset.png)
 
+## 2.1 git init
+syntax:git init
+purpose:initializes a new repository
+Example:git init
+screenshot:![Git init output](git-init.png)
+
+## 2.2 git clone
+syntax:git clone <repo-url>
+purpose:copies repository from github
+Example:git clone
+screenshot:![Git clone output](git-clone.png)
