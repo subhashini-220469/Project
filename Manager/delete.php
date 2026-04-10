@@ -11,4 +11,3 @@ if (file_exists($file)) {
 
 echo "<a href='index.php'>Go Back</a>";
 ?>
-"hello"
