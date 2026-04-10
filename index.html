@@ -1,242 +1,457 @@
-
 <html>
+
 <head>
-<title>Electronic Store</title>
+    <meta charset="UTF-8">
+    <title>Electronic Store</title>
 
-<style>
-body {
-    font-family:arial;
-    background-color:antiquewhite
-}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: #1a1a1a;
+        }
+
+        /* Top Logo Area */
+        body>h1:first-of-type {
+            text-align: center;
+            font-size: 50px;
+            font-weight: 700;
+            color: #ff3b30;
+            margin: 20px 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navigation Bar */
+        .nav {
+            background: linear-gradient(90deg, #ff3b30, #ff2a5f);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav>a, .nav-right>a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav>a:hover, .nav-right>a:hover {
+            color: #ffd1d1;
+        }
+
+        /* Custom Dropdowns */
+        .dropdown-test {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .dropbtn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 300px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            overflow: hidden;
+            top: 110%;
+            z-index: 1000;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.2s, color 0.2s;
+            cursor: pointer;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f8f9fa;
+            color: #ff3b30;
+        }
+
+        .dropdown-test:focus-within .dropdown-content,
+        .dropdown-test:hover .dropdown-content {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* Search Box */
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-box label {
+            margin-right: 8px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        /* Hero Section (.main) */
+        .main {
+            background: white;
+            margin: 40px auto;
+            width: 90%;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+            background-image: linear-gradient(to right, #ffffff, #fdfdfd);
+        }
+
+        .main-text {
+            width: 50%;
+            padding-right: 40px;
+        }
+
+        .main-text h1 {
+            font-size: 44px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .main-text p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .main-text button {
+            background: #ff3b30;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 59, 48, 0.4);
+        }
+
+        .main-text button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 59, 48, 0.5);
+        }
+
+        .main-img {
+            width: 50%;
+        }
+
+        .main-img img {
+            width: 100%;
+            border-radius: 15px;
+            transition: transform 0.5s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-img a:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Products Grid */
+        .products {
+            width: 90%;
+            margin: 60px auto;
+        }
+
+        .products h2 {
+            margin-bottom: 30px;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .product {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .product:hover img {
+            transform: scale(1.05);
+        }
+
+        .product h4 {
+            font-size: 16px;
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .price {
+            color: #ff3b30;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .product button {
+            background: transparent;
+            color: #ff3b30;
+            border: 2px solid #ff3b30;
+            padding: 10px 0;
+            width: 100%;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .product button:hover {
+            background: #ff3b30;
+            color: white;
+        }
 
 
-h1{
-    text-align:center;
-    font-size: 60px;
-    color:black;
-    font-family:Arial, Helvetica, sans-serif;
-}
+        footer {
+            background: #1a1a1a;
+            text-align: center;
+            padding: 50px 20px 30px;
+            margin-top: 60px;
+            color: #aaa;
+        }
 
-.nav {
-    background:red;
-    padding: 12px 40px;
-}
+        .about {
+            font-size: 18px;
+            color: #ddd;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
 
-.nav a {
-    color: white;
-    text-decoration: none;
-    margin-right: 25px;
-    font-weight: bold;
-}
+        .follow {
+            margin-bottom: 30px;
+        }
 
+        .follow a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 15px;
+            padding: 8px 20px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s;
+        }
 
-.main {
-    background: white;
-    margin: 30px auto;
-    width: 90%;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-}
-
-.main-text {
-    width: 50%;
-}
-
-.main-text h1 {
-    font-size: 36px;
-}
-
-.main-text p {
-    color: gray;
-    margin: 15px ;
-}
-
-.main-text button {
-    background: goldenrod;
-    color: black;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.main-img {
-    width: 50%;
-}
-
-.main-img img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.products {
-    width: 90%;
-    margin: auto;
-}
-
-.products h2 {
-    margin-bottom: 20px;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-}
-
-.product {
-    background: white;
-    padding: 15px;
-    border-radius: 30px;
-    text-align: center;
-}
-
-.product img {
-    width: 100%;
-    height: 150px;
-    object-fit: contain
-}
-
-.product h4 {
-    font-size: 14px;
-}
-
-.price {
-    color: red;
-    font-weight: bold;
-}
-.dropdown-test{
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  background:none;
-  background-color: red;
-  color: white;
-  padding: 15px 20px;
-  border: none;
-  cursor: pointer;
-  font-weight:bold;
-  font-size:16px;
-}
-
-.dropdown-content {
-  display: none;
-  position:absolute;
-  background:white;
-  min-width: 400px;
-  
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px;
-  color: black;
- 
-}
-
-.dropdown-test:focus-within .dropdown-content {
-  display: block;
-}
-</style>
+        .follow a:hover {
+            background: #ff3b30;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
 
-<h1>e-shop</h1>
+    <h1>e-shop</h1>
 
 
-<div class="nav">
-    <div class="dropdown-test">
-        <button class="dropbtn" >All categories ▼</button>
-        <div class="dropdown-content">
-            <a>📱 Mobiles & Accessories</a>
-            <a>💻 Computers & Laptops</a>
-            <a>📺 TV and Home Entertainment</a>
-            <a>🏠 Home Appliances</a>
-            <a>🥘 Kitchen Appliances</a>
-            <a>📷 Cameras & Accessories</a>   
-            <a>⌚ Wearbles & watches</a>       
-            <a>🎮 Gaming & Accessories</a>
-            <a>🔧 Networking & Office Electronics</a>
+    <div class="nav">
+        <div class="dropdown">
+            <div class="dropdown-test">
+                <button class="dropbtn">All categories ▼</button>
+                <div class="dropdown-content">
+                    <a>📱 Mobiles & Accessories</a>
+                    <a>💻 Computers & Laptops</a>
+                    <a>📺 TV and Home Entertainment</a>
+                    <a>🏠 Home Appliances</a>
+                    <a>🥘 Kitchen Appliances</a>
+                    <a>📷 Cameras & Accessories</a>
+                    <a>⌚ Wearbles & watches</a>
+                    <a>🎮 Gaming & Accessories</a>
+                    <a>🔧 Networking & Office Electronics</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <a href="c:\Users\SUBHASHINI ISKA\Desktop\project\x.html" target="blank" >products</a>
-      <div class="dropdown-test">
-        <button class="dropbtn" >Contacts</button>
-        <div class="dropdown-content">
-            <a> 📞 phone : +91 8639039128</a>
-            <a> ✉ email : support@electronicstore.com</a>
-            <a> 📰 Address : Bheeram Guda,Hyderabad,Telangana</a>
-            <a> ⏱ Working hours : Mon-Sat 9AM-9PM</a>
+        <a href="products.html" target="blank">products</a>
+        <div class="dropdown-test">
+            <button class="dropbtn">Contacts</button>
+            <div class="dropdown-content">
+                <a> 📞 phone : +91 8639039128</a>
+                <a> ✉ email : support@electronicstore.com</a>
+                <a> 📰 Address : Bheeram Guda,Hyderabad,Telangana</a>
+                <a> ⏱ Working hours : Mon-Sat 9AM-9PM</a>
+            </div>
         </div>
-      </div>
-      <a href="c:\Users\SUBHASHINI ISKA\Desktop\project\ex.html" target="blank">best seller</a>
-      
-
-        
-</div>
-
-
-<div class="main">
-    <div class="main-text">
-        <h1>Your One-Stop Electronic Market</h1>
-        <p>Buy the best electronic products with amazing offers.</p>
-        <button >Shop Now </button>
-    </div>
-    <div class="main-img">
-        <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\smart.jpg" alt="electronics">
-    </div>
-</div>
-
-
-<div class="products">
-    <h2>Featured Products</h2>
-    <div class="product-grid">
-
-        <div class="product">
-            <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\iphone.jpeg" alt="hello">
-            <h4>iPhone 17</h4>
-            <div class="price">$999</div>
-            <button >add to cart</button>
-            
-            
+        <a href="bestseller.html" target="blank">best seller</a>
+        <div class="nav-right">
+            <div class="search-box">
+                <label>🔎</label>
+                <input type="text" placeholder="search here..">
+            </div>
+            <a href="dashboard.php">profile</a>
+            <a href="login.html">login</a>
         </div>
 
-        <div class="product">
-            <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\headphones.jpeg">
-            <h4>Headphones</h4>
-            <div class="price">$59</div>
-            <button >add to cart</button>
-        </div>
-
-        <div class="product">
-            <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\buds.jpeg">
-            <h4>buds</h4>
-            <div class="price">$99</div>
-            <button >add to cart</button>
-        </div>
-
-        <div class="product">
-            <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\camera.jpeg">
-            <h4></h4>Camera</h4>
-            <div class="price">$79</div>
-            <button >add to cart</button>
-        </div>
-
-        <div class="product">
-            <img src="c:\Users\SUBHASHINI ISKA\Desktop\project\tv.jpeg">
-            <h4>TV</h4>
-            <div class="price">$279</div>
-            <button >add to cart</button>
-        </div>
 
     </div>
-    
-</div>
+
+
+    <div class="main">
+        <div class="main-text">
+            <h1>Your One-Stop Electronic Market</h1>
+            <p>Buy the best electronic products with amazing offers.</p>
+            <button>Shop Now </button>
+        </div>
+        <div class="main-img">
+            <a href="video.mp4">
+                <img src="smart.jpg" alt="electronics"></a>
+
+        </div>
+    </div>
+
+
+    <div class="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+
+            <div class="product">
+                <img src="iphone.jpeg" alt="hello">
+                <h4>iPhone 17</h4>
+                <div class="price">$999</div>
+                <button>add to cart</button>
+
+
+            </div>
+
+            <div class="product">
+                <img src="headphones.jpeg">
+                <h4>Headphones</h4>
+                <div class="price">$59</div>
+                <button>add to cart</button>
+            </div>
+
+            <div class="product">
+                <img src="buds.jpeg">
+                <h4>buds</h4>
+                <div class="price">$99</div>
+                <button>add to cart</button>
+            </div>
+
+            <div class="product">
+                <img src="camera.jpeg">
+                <h4></h4>Camera</h4>
+                <div class="price">$79</div>
+                <button>add to cart</button>
+            </div>
+
+            <div class="product">
+                <img src="tv.jpeg">
+                <h4>TV</h4>
+                <div class="price">$279</div>
+                <button>add to cart</button>
+            </div>
+
+        </div>
+
+    </div>
+    <footer>
+        <div class="about">
+            <p>Your one-stop online shop for the latest electronics — headphones, speakers, laptops, and more!</p>
+        </div>
+        <div class="follow">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>&copy; 2026 e-shop. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
