@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --------------------------------------------------------
-    // 1. Interactive Effects (Hover/Focus across all pages)
-    // --------------------------------------------------------
     
-    // Add smooth focus effect to all input fields
     const inputs = document.querySelectorAll('input');
     inputs.forEach(input => {
         input.addEventListener('focus', () => {
@@ -18,11 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // --------------------------------------------------------
-    // 2. index.html - DOM Manipulation & Events
-    // --------------------------------------------------------
-    
-    // Search Box Implementation
     const searchInput = document.querySelector('.search-box input');
     if (searchInput) {
         searchInput.addEventListener('keyup', (e) => {
@@ -87,11 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --------------------------------------------------------
-    // 3. login.html & register.html - Form Validations
-    // --------------------------------------------------------
-    
-    // Login Form Validation
+   
     const loginForm = document.querySelector('.login-box form[action="login.php"]');
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
@@ -105,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Register Form Validation (Password Match check)
+   
     const registerForm = document.querySelector('.login-box form[action="register.php"]');
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
