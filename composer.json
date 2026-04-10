@@ -1,0 +1,8 @@
+{
+  "name": "subhashiniiska/i_mongodb",
+  "description": "MongoDB test project",
+  "type": "project",
+  "require": {
+    "mongodb/mongodb": "^2.0"
+  }
+}
